@@ -23,5 +23,15 @@
   "homepage": "https://github.com/NathanielAvery/2019-advent-of-code#readme",
   "dependencies": {
     "typescript": "^3.7.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.7.4",
+    "@babel/preset-env": "^7.7.4",
+    "@babel/preset-typescript": "^7.7.4",
+    "@types/jest": "^24.0.23",
+    "@types/node": "^12.12.14",
+    "babel-jest": "^24.9.0",
+    "jest": "^24.9.0",
+    "ts-jest": "^24.2.0"
   }
 }
