@@ -1,0 +1,23 @@
+{
+  "name": "advent-of-code-2019",
+  "version": "1.0.0",
+  "description": "Advent of Code 2019",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NathanielAvery/2019-advent-of-code.git"
+  },
+  "keywords": [
+    "advent",
+    "2019"
+  ],
+  "author": "Nathaniel Avery",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NathanielAvery/2019-advent-of-code/issues"
+  },
+  "homepage": "https://github.com/NathanielAvery/2019-advent-of-code#readme"
+}
