@@ -63,3 +63,5 @@ typings/
 # Ignore generated JS files
 *.js
 !*.config.js
+!.*rc.js
+!.*ignore

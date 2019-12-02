@@ -1,0 +1,8 @@
+!**/*.ts
+
+# Ignore compiled TypeScript
+**/*.js
+
+# Don't ignore configuration files
+!.*rc.js
+!*.config.js
