@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "day-01": "tsc && node ./day-01/index.js ./day-01/data/module-masses.txt",
+    "day-02": "tsc && node ./day-02/index.js ./day-02/data/inputProgram.txt",
     "lint": "eslint --ext js,ts .",
     "lint:fix": "eslint --ext js,ts --fix .",
     "test": "jest",

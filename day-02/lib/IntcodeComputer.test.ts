@@ -19,14 +19,16 @@ describe("IntcodeComputer", () => {
       [1, 1, 1, 4, 99, 5, 6, 0, 99],
       [30, 1, 1, 4, 2, 5, 6, 0, 99],
     ],
+    [
+      [1, 9, 10, 3, 2, 3, 11, 0, 99, 30, 40, 50],
+      [3500, 9, 10, 70, 2, 3, 11, 0, 99, 30, 40, 50],
+    ],
   ];
 
   it.each(examples)(
     "Program %p should become %p",
     (initialProgram: IntcodeProgram, finalProgram: IntcodeProgram): void => {
-      const computer = new IntcodeComputer();
-      computer.loadProgram(initialProgram);
-
+      const computer = new IntcodeComputer(initialProgram);
       const calculatedProgram = computer.runProgram();
       expect(calculatedProgram).toStrictEqual(finalProgram);
     },
