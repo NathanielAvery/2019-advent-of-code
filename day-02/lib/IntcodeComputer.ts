@@ -8,6 +8,8 @@ enum OpCode {
   "EXIT" = 99,
 }
 
+type OperationFunction = () => void;
+
 export class IntcodeComputer {
   public constructor(program: IntcodeProgram) {
     assert(program.length > 0, "Intcode Program must have positive length");
@@ -21,12 +23,13 @@ export class IntcodeComputer {
   }
 
   public runProgram(): IntcodeProgram {
-    console.log("Running the program!");
+    // console.log("Running the program!");
     // Run program...
 
     while (this.getCurrentOperationCode() !== OpCode.EXIT) {
       // Perform operation
-      this.operationFunctions[this.getCurrentOperationCode()]();
+      const opCode = this.getCurrentOperationCode();
+      this.getOperationFunction(opCode)();
 
       // Jump forward by 4.
       this.currentOpcodeLocation += 4;
@@ -37,7 +40,7 @@ export class IntcodeComputer {
     }
 
     // Wahoo!
-    console.log("Program has completed.");
+    // console.log("Program has completed.");
 
     return this.program;
   }
@@ -108,4 +111,16 @@ export class IntcodeComputer {
     1: this.addFunction.bind(this),
     2: this.multiplyFunction.bind(this),
   };
+
+  private getOperationFunction(code: number): OperationFunction {
+    const noOp: OperationFunction = () => {};
+    switch (code) {
+      case 1:
+        return this.addFunction.bind(this);
+      case 2:
+        return this.multiplyFunction.bind(this);
+      default:
+        return noOp;
+    }
+  }
 }
